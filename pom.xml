@@ -5,12 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.stscoundrel</groupId>
-  <artifactId>javatemplate</artifactId>
+  <artifactId>riimut</artifactId>
   <version>0.1.0</version>
 
-  <name>javatemplate</name>
-  <description>A simple Java/Maven template.</description>
-  <url>https://github.com/stscoundrel/java-template</url>
+  <name>riimut</name>
+  <description>Transform latin letters to runes and vice versa.</description>
+  <url>https://github.com/stscoundrel/riimut-java</url>
 
   <licenses>
     <license>

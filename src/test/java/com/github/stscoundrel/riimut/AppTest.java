@@ -1,4 +1,4 @@
-package com.github.stscoundrel.javatemplate;
+package com.github.stscoundrel.riimut;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -4,13 +4,31 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.stscoundrel</groupId>
+  <groupId>io.github.stscoundrel</groupId>
   <artifactId>riimut</artifactId>
   <version>0.1.0</version>
 
   <name>riimut</name>
   <description>Transform latin letters to runes and vice versa.</description>
   <url>https://github.com/stscoundrel/riimut-java</url>
+  
+  <scm>
+    <connection>scm:git:git://github.com/stscoundrel/riimut-java.git</connection>
+    <developerConnection>scm:git:ssh://github.com:stscoundrel/riimut-java.git</developerConnection>
+    <url>http://github.com/stscoundrel/riimut-java/tree/master</url>
+  </scm>
+  
+  <developers>
+    <developer>
+      <id>stscoundrel</id>
+      <name>Sampo Silvennoinen</name>
+      <email>silvennoinen.sampo@gmail.com</email>
+      <url>https://github.com/stscoundrel</url>
+      <roles>
+        <role>developer</role>
+      </roles>
+    </developer>
+  </developers>
 
   <licenses>
     <license>

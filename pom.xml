@@ -129,7 +129,6 @@
               <goals>
                 <goal>sign</goal>
               </goals>
-            </configuration>
             </execution>
           </executions>
         </plugin>

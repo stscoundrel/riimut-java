@@ -2,7 +2,7 @@ package com.github.stscoundrel.riimut;
 
 import java.util.HashMap;
 
-public class Transform {
+class Transform {
     public static String withDictionary(String content, HashMap<String, String> map) {
         StringBuilder result = new StringBuilder();
 

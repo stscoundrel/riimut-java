@@ -136,6 +136,13 @@
     </pluginManagement>
   </build>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+
   <reporting>
     <plugins>
       <plugin>

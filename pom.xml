@@ -53,6 +53,7 @@
   </dependencies>
 
   <build>
+    <pluginManagement>
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -142,6 +143,7 @@
           <version>2.8.2</version>
         </plugin>
       </plugins>
+    </pluginManagement>
   </build>
 
   <distributionManagement>

@@ -6,7 +6,7 @@
 
   <groupId>io.github.stscoundrel</groupId>
   <artifactId>riimut</artifactId>
-  <version>0.1.4</version>
+  <version>0.1.5</version>
 
   <name>riimut</name>
   <description>Transform latin letters to runes and vice versa.</description>

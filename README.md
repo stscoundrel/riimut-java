@@ -9,6 +9,19 @@ Includes transformers for four main runic alphabets:
 - Medieval Futhork
 - Futhorc (Anglo-Frisian runes)
 
+## Install
+
+As Maven dependency.
+
+```xml
+<dependency>
+  <groupId>io.github.stscoundrel</groupId>
+  <artifactId>riimut</artifactId>
+  <version>0.1.33</version> <!-- Note! Check latest release number -->
+</dependency>
+```
+
+For alternative install methods, see the [Maven Central Repo](https://search.maven.org/artifact/io.github.stscoundrel/riimut)
 
 #### What's in the name?
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import com.github.stscoundrel.riimut.Transform;
 
 public class YoungerFuthark implements Dialect {
-    static final HashMap<String, String> LETTERS_TO_RUNES = new HashMap<String, String>() {
+    static final HashMap<String, String> LETTERS_TO_LONG_BRANCH_RUNES = new HashMap<String, String>() {
         {
             put("a", "ᛅ");
             put("á", "ᛅ");
@@ -51,6 +51,52 @@ public class YoungerFuthark implements Dialect {
         }
     };
 
+    static final HashMap<String, String> LETTERS_TO_SHORT_TWIG_RUNES = new HashMap<String, String>() {
+        {
+            put("a", "ᛆ");
+            put("á", "ᛆ");
+            put("b", "ᛒ");
+            put("c", "ᛌ");
+            put("d", "ᛐ");
+            put("ð", "ᚦ");
+            put("e", "ᛁ");
+            put("é", "ᛁ");
+            put("f", "ᚠ");
+            put("g", "ᚴ");
+            put("h", "ᚽ");
+            put("i", "ᛁ");
+            put("í", "ᛁ");
+            put("j", "ᛁ");
+            put("k", "ᚴ");
+            put("l", "ᛚ");
+            put("m", "ᛘ");
+            put("n", "ᚿ");
+            put("o", "ᚢ");
+            put("ó", "ᚢ");
+            put("p", "ᛒ");
+            put("q", "ᚴ");
+            put("r", "ᚱ");
+            put("s", "ᛌ");
+            put("t", "ᛐ");
+            put("þ", "ᚦ");
+            put("u", "ᚢ");
+            put("ú", "ᚢ");
+            put("v", "ᚢ");
+            put("w", "ᚢ");
+            put("x", "ᛌ");
+            put("y", "ᚢ");
+            put("ý", "ᚢ");
+            put("z", "ᛌ");
+            put("å", "ᚢ");
+            put("ä", "ᛆ");
+            put("æ", "ᛆ");
+            put("ö", "ᚢ");
+            put("ø", "ᚢ");
+            put("ǫ", "ᚢ");
+            put(" ", ":");
+        }
+    };
+
     static final HashMap<String, String> RUNES_TO_LETTERS = new HashMap<String, String>() {
         {
             put("ᚠ", "f");
@@ -78,8 +124,16 @@ public class YoungerFuthark implements Dialect {
         }
     };
 
+    public String lettersToLongBranchRunes(String content) {
+        return Transform.withDictionary(content, LETTERS_TO_LONG_BRANCH_RUNES);
+    }
+
+    public String lettersToShortTwigRunes(String content) {
+        return Transform.withDictionary(content, LETTERS_TO_SHORT_TWIG_RUNES);
+    }
+
     public String lettersToRunes(String content) {
-        return Transform.withDictionary(content, LETTERS_TO_RUNES);
+        return Transform.withDictionary(content, LETTERS_TO_LONG_BRANCH_RUNES);
     }
 
     public String runesToLetters(String content) {

@@ -3,24 +3,48 @@ package com.github.stscoundrel.riimut.dialects;
 import junit.framework.TestCase;
 
 public class YoungerFutharkTest extends TestCase {
-    public void testTransformsLettersToRunes() {
+    public void testTransformDefaultsToLongBranch() {
         String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
         String runes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
 
-        Dialect youngerFuthark = new YoungerFuthark();
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToRunes(letters);
 
         assertEquals(runes, result);
     }
 
+    public void testTransformsLettersToLongBranchRunes() {
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+        String runes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
+
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
+        String result = youngerFuthark.lettersToLongBranchRunes(letters);
+
+        assertEquals(runes, result);
+    }
+
+    public void testTransformsLettersToShortTwigRunes() {
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+        String runes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ";
+
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
+        String result = youngerFuthark.lettersToShortTwigRunes(letters);
+
+        assertEquals(runes, result);
+    }
+
     public void testTransformsRunesToLetters() {
-        String runes = "ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛁᛅᛆᛋᛌᛏᛐᛒᛘᛚᛦ:";
+        // Both long branch & short twig should produce same letters.
+        String longBranchRunes = "ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛁᛅᛆᛋᛌᛏᛐᛒᛘᛚᛦ:";
+        String shortTwigRunes = "ᚠᚢᚦᚬᚱᚴᚽᚽᚿᚿᛁᛆᛆᛌᛌᛐᛐᛒᛘᛚᛦ:";
         String letters = "fuþorkhhnniaassttbmlR ";
 
-        Dialect youngerFuthark = new YoungerFuthark();
-        String result = youngerFuthark.runesToLetters(runes);
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
+        String result1 = youngerFuthark.runesToLetters(longBranchRunes);
+        String result2 = youngerFuthark.runesToLetters(shortTwigRunes);
 
-        assertEquals(letters, result);
+        assertEquals(letters, result1);
+        assertEquals(letters, result2);
     }
 
     public void testTransformsTextContentToRunes() {
@@ -28,7 +52,7 @@ public class YoungerFutharkTest extends TestCase {
         String letters = "auk tani karþi kristna";
         String runes = "ᛅᚢᚴ:ᛏᛅᚾᛁ:ᚴᛅᚱᚦᛁ:ᚴᚱᛁᛋᛏᚾᛅ";
 
-        Dialect youngerFuthark = new YoungerFuthark();
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToRunes(letters);
 
         assertEquals(runes, result);
@@ -39,7 +63,7 @@ public class YoungerFutharkTest extends TestCase {
         String runes = "ᛅᚢᚴ:ᛏᛅᚾᛁ:ᚴᛅᚱᚦᛁ:ᚴᚱᛁᛋᛏᚾᛅ";
         String letters = "auk tani karþi kristna";
 
-        Dialect youngerFuthark = new YoungerFuthark();
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.runesToLetters(runes);
 
         assertEquals(letters, result);

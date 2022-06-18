@@ -1,4 +1,4 @@
-package com.github.stscoundrel.riimut.dialects;
+package io.github.stscoundrel.riimut.dialects;
 
 import junit.framework.TestCase;
 

@@ -1,4 +1,4 @@
-package com.github.stscoundrel.riimut.dialects;
+package io.github.stscoundrel.riimut.dialects;
 
 public interface Dialect {
     public String lettersToRunes(String content);

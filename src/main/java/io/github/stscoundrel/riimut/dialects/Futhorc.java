@@ -1,8 +1,8 @@
-package com.github.stscoundrel.riimut.dialects;
+package io.github.stscoundrel.riimut.dialects;
 
 import java.util.HashMap;
 
-import com.github.stscoundrel.riimut.Transform;
+import io.github.stscoundrel.riimut.Transform;
 
 public class Futhorc implements Dialect {
     static final HashMap<String, String> LETTERS_TO_RUNES = new HashMap<String, String>() {

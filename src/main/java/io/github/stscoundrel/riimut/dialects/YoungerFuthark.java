@@ -1,8 +1,8 @@
-package com.github.stscoundrel.riimut.dialects;
+package io.github.stscoundrel.riimut.dialects;
 
 import java.util.HashMap;
 
-import com.github.stscoundrel.riimut.Transform;
+import io.github.stscoundrel.riimut.Transform;
 
 public class YoungerFuthark implements Dialect {
     enum Variant {

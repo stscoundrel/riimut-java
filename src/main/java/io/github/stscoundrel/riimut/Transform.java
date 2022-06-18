@@ -1,4 +1,4 @@
-package com.github.stscoundrel.riimut;
+package io.github.stscoundrel.riimut;
 
 import java.util.HashMap;
 

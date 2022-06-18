@@ -68,4 +68,45 @@ public class YoungerFutharkTest extends TestCase {
 
         assertEquals(letters, result);
     }
+
+    public void testStyleVariantSetters() {
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+        String expectedLongBranchRunes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
+        String expectedShortTwigRunes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ";
+
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
+
+        // Expected to use long branch as default.
+        String longBranchResult = youngerFuthark.lettersToRunes(letters);
+
+        // Change to short twig.
+        youngerFuthark.useShortTwig();
+        String shortTwigResult = youngerFuthark.lettersToRunes(letters);
+
+        // Switch back to long branch
+        youngerFuthark.useLongBranch();
+        String secondLongBranchResult = youngerFuthark.lettersToRunes(letters);
+
+        assertEquals(expectedLongBranchRunes, longBranchResult);
+        assertEquals(expectedShortTwigRunes, shortTwigResult);
+        assertEquals(expectedLongBranchRunes, secondLongBranchResult);
+    }
+
+    public void testConstructorsWithVariantSettings() {
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+        String expectedLongBranchRunes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
+        String expectedShortTwigRunes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ";
+
+        YoungerFuthark youngerFutharkDefault = new YoungerFuthark();
+        YoungerFuthark youngerFutharkLongBranch = new YoungerFuthark(YoungerFuthark.Variant.LONG_BRANCH);
+        YoungerFuthark youngerFutharkShortTwig = new YoungerFuthark(YoungerFuthark.Variant.SHORT_TWIG);
+
+        String defaultResult = youngerFutharkDefault.lettersToRunes(letters);
+        String shortTwigResult = youngerFutharkShortTwig.lettersToRunes(letters);
+        String longBranchResult = youngerFutharkLongBranch.lettersToRunes(letters);
+
+        assertEquals(expectedLongBranchRunes, defaultResult);
+        assertEquals(expectedShortTwigRunes, shortTwigResult);
+        assertEquals(expectedLongBranchRunes, longBranchResult);
+    }
 }

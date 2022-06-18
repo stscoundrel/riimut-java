@@ -5,6 +5,33 @@ import java.util.HashMap;
 import com.github.stscoundrel.riimut.Transform;
 
 public class YoungerFuthark implements Dialect {
+    enum Variant {
+        LONG_BRANCH,
+        SHORT_TWIG
+    }
+
+    public YoungerFuthark() {
+        runeStyle = Variant.LONG_BRANCH;
+    }
+
+    public YoungerFuthark(Variant style) {
+        runeStyle = style;
+    }
+
+    private Variant runeStyle;
+
+    private void setVariant(Variant variant) {
+        runeStyle = variant;
+    }
+
+    public void useLongBranch() {
+        setVariant(Variant.LONG_BRANCH);
+    }
+
+    public void useShortTwig() {
+        setVariant(Variant.SHORT_TWIG);
+    }
+
     static final HashMap<String, String> LETTERS_TO_LONG_BRANCH_RUNES = new HashMap<String, String>() {
         {
             put("a", "ᛅ");
@@ -133,6 +160,10 @@ public class YoungerFuthark implements Dialect {
     }
 
     public String lettersToRunes(String content) {
+        if (runeStyle == Variant.SHORT_TWIG) {
+            return Transform.withDictionary(content, LETTERS_TO_SHORT_TWIG_RUNES);
+        }
+
         return Transform.withDictionary(content, LETTERS_TO_LONG_BRANCH_RUNES);
     }
 

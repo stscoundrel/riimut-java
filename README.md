@@ -17,7 +17,7 @@ As Maven dependency.
 <dependency>
   <groupId>io.github.stscoundrel</groupId>
   <artifactId>riimut</artifactId>
-  <version>0.1.33</version> <!-- Note! Check latest release number -->
+  <version>0.3.0</version> <!-- Note! Check latest release number -->
 </dependency>
 ```
 

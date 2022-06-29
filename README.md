@@ -73,7 +73,7 @@ System.out.println(latinText); // "auk tani karþi kristna"
 
 ```
 
-Rune variants in Younger Futhark:
+#### Rune variants in Younger Futhark
 
 Younger Futhark comes with long branch (Danish) and short twig (Norwegian & Swedish) variants.
 ```java

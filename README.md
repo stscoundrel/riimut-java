@@ -100,7 +100,7 @@ youngerFutharkShortTwig.useLongBranch();
 
 ```
 
-There is also a "staveless" variant of Younger Futhark. However, staveless runes are less trivial to display without custom fonts, so some inscriptions may not be perfect a match. To display some of the dot-like notations, the unicode is borrowed from braille. Therefore, be extra critical before trusting the staveless variant.
+There is also a "staveless" variant of Younger Futhark. However, staveless runes are less trivial to display without custom fonts, so some inscriptions may not be perfect a match. IN lieu of proper runic unicode, they are other characters that have similar shape. For example, the more dot-like notations use braille unicode. Therefore, be extra critical before trusting the staveless variant.
 
 ```java
 
@@ -114,7 +114,7 @@ YoungerFuthark youngerFuthark = new YoungerFuthark(YoungerFuthark.Variant.STAVEL
 // ...Or called with named method on any Younger Futhark instance.
 String staveless = youngerFuthark.lettersToStavelessRunes(letters)
 
-System.out.println(staveless); // ᛙ ╮ ו ˎ ⡄ ᛍ ᚽ ⸜ ᛁ ⸝ ╵ ⸍ , ⠃ ⸌ ⡄ "
+System.out.println(staveless); // ᛙ ╮ ו ˎ ⡄ ᛍ ᚽ ⸜ ᛁ ⸝ ╵ ⸍ ˏ ⠃ ⸌ ⡄ "
 
 // Same style switch exists for staveless too.
 youngerFutharkLongBranch.useStaveless();

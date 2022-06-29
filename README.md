@@ -100,6 +100,27 @@ youngerFutharkShortTwig.useLongBranch();
 
 ```
 
+There is also a "staveless" variant of Younger Futhark. However, staveless runes are less trivial to display without custom fonts, so some inscriptions may not be perfect a match. To display some of the dot-like notations, the unicode is borrowed from braille. Therefore, be extra critical before trusting the staveless variant.
+
+```java
+
+import io.github.stscoundrel.riimut.dialects.YoungerFuthark;
+
+String letters = "fuþoRkhniastbmlR";
+
+// Can be initialized with staveless enum
+YoungerFuthark youngerFuthark = new YoungerFuthark(YoungerFuthark.Variant.STAVELESS);
+
+// ...Or called with named method on any Younger Futhark instance.
+String staveless = youngerFuthark.lettersToStavelessRunes(letters)
+
+System.out.println(staveless); // ᛙ ╮ ו ˎ ⡄ ᛍ ᚽ ⸜ ᛁ ⸝ ╵ ⸍ , ⠃ ⸌ ⡄ "
+
+// Same style switch exists for staveless too.
+youngerFutharkLongBranch.useStaveless();
+
+```
+
 #### What's in the name?
 
 "Riimut" is the Finnish word for "runes".

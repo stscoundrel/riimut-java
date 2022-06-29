@@ -33,18 +33,32 @@ public class YoungerFutharkTest extends TestCase {
         assertEquals(runes, result);
     }
 
+    public void testTransformsLettersToStavelessRunes() {
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+        String runes = "⸝⸝,╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎ,ᛍ⡄╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
+
+        YoungerFuthark youngerFuthark = new YoungerFuthark();
+        String result = youngerFuthark.lettersToStavelessRunes(letters);
+
+        assertEquals(runes, result);
+    }
+
     public void testTransformsRunesToLetters() {
         // Both long branch & short twig should produce same letters.
         String longBranchRunes = "ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛁᛅᛆᛋᛌᛏᛐᛒᛘᛚᛦ:";
         String shortTwigRunes = "ᚠᚢᚦᚬᚱᚴᚽᚽᚿᚿᛁᛆᛆᛌᛌᛐᛐᛒᛘᛚᛦ:";
+        String stavelessRunes = "ᛙ╮וˎ⡄ᛍᚽ⸜ᛁ⸝╵⸍,⠃⸌⡄:";
         String letters = "fuþorkhhnniaassttbmlR ";
+        String stavelessLetters = "fuþoRkhniastbmlR ";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result1 = youngerFuthark.runesToLetters(longBranchRunes);
         String result2 = youngerFuthark.runesToLetters(shortTwigRunes);
+        String result3 = youngerFuthark.runesToLetters(stavelessRunes);
 
         assertEquals(letters, result1);
         assertEquals(letters, result2);
+        assertEquals(stavelessLetters, result3);
     }
 
     public void testTransformsTextContentToRunes() {
@@ -73,6 +87,7 @@ public class YoungerFutharkTest extends TestCase {
         String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
         String expectedLongBranchRunes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
         String expectedShortTwigRunes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ";
+        String expectedStavelessRunes = "⸝⸝,╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎ,ᛍ⡄╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
 
@@ -87,9 +102,14 @@ public class YoungerFutharkTest extends TestCase {
         youngerFuthark.useLongBranch();
         String secondLongBranchResult = youngerFuthark.lettersToRunes(letters);
 
+        // Switch to staveless.
+        youngerFuthark.useStaveless();
+        String stavelessResult = youngerFuthark.lettersToRunes(letters);
+
         assertEquals(expectedLongBranchRunes, longBranchResult);
         assertEquals(expectedShortTwigRunes, shortTwigResult);
         assertEquals(expectedLongBranchRunes, secondLongBranchResult);
+        assertEquals(expectedStavelessRunes, stavelessResult);
     }
 
     public void testConstructorsWithVariantSettings() {

@@ -117,7 +117,7 @@ String staveless = youngerFuthark.lettersToStavelessRunes(letters)
 System.out.println(staveless); // ᛙ ╮ ו ˎ ⡄ ᛍ ᚽ ⸜ ᛁ ⸝ ╵ ⸍ ˏ ⠃ ⸌ ⡄ "
 
 // Same style switch exists for staveless too.
-youngerFutharkLongBranch.useStaveless();
+youngerFuthark.useStaveless();
 
 ```
 

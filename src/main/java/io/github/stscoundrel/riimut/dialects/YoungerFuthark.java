@@ -129,7 +129,7 @@ public class YoungerFuthark implements Dialect {
             put("ó", "ˎ");
             put("p", "ˏ");
             put("q", "ᛍ");
-            put("r", "⡄");
+            put("r", "◟");
             put("s", "╵");
             put("t", "⸍");
             put("þ", "ו");

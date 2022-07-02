@@ -35,11 +35,11 @@ public class YoungerFutharkTest extends TestCase {
 
     public void testTransformsLettersToStavelessRunes() {
         String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
-        String runes = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ⡄╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
+        String runes = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ◟╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToStavelessRunes(letters);
-
+        System.out.println(result);
         assertEquals(runes, result);
     }
 
@@ -87,7 +87,7 @@ public class YoungerFutharkTest extends TestCase {
         String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
         String expectedLongBranchRunes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
         String expectedShortTwigRunes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ";
-        String expectedStavelessRunes = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ⡄╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
+        String expectedStavelessRunes = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ◟╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
 

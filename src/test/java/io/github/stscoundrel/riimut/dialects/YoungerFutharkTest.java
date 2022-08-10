@@ -39,7 +39,6 @@ public class YoungerFutharkTest extends TestCase {
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToStavelessRunes(letters);
-        System.out.println(result);
         assertEquals(runes, result);
     }
 

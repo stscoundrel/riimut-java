@@ -45,6 +45,7 @@ public class ElderFuthark implements Dialect {
             put("å", "ᛟ");
             put("ä", "ᛇ");
             put("æ", "ᛇ");
+            put("œ", "ᛟ");
             put("ö", "ᚢ");
             put("ø", "ᚢ");
             put("þ", "ᚦ");

@@ -4,8 +4,8 @@ import junit.framework.TestCase;
 
 public class YoungerFutharkTest extends TestCase {
     public void testTransformDefaultsToLongBranch() {
-        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
-        String runes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ";
+        String runes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚢᚦ";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToRunes(letters);
@@ -14,8 +14,8 @@ public class YoungerFutharkTest extends TestCase {
     }
 
     public void testTransformsLettersToLongBranchRunes() {
-        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
-        String runes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ";
+        String runes = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚢᚦ";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToLongBranchRunes(letters);
@@ -24,8 +24,8 @@ public class YoungerFutharkTest extends TestCase {
     }
 
     public void testTransformsLettersToShortTwigRunes() {
-        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
-        String runes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ";
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ";
+        String runes = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚢᚦ";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToShortTwigRunes(letters);
@@ -34,8 +34,8 @@ public class YoungerFutharkTest extends TestCase {
     }
 
     public void testTransformsLettersToStavelessRunes() {
-        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
-        String runes = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ◟╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו";
+        String letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöœøǫþ";
+        String runes = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ◟╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎˎו";
 
         YoungerFuthark youngerFuthark = new YoungerFuthark();
         String result = youngerFuthark.lettersToStavelessRunes(letters);

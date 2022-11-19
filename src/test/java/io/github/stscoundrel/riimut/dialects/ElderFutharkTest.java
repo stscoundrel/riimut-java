@@ -4,8 +4,8 @@ import junit.framework.TestCase;
 
 public class ElderFutharkTest extends TestCase {
     public void testTransformsLettersToRunes() {
-        String letters = "aábcdðeéfghiíjklmnŋoópqrstþuúvwxyýzåäæöøǫþ";
-        String runes = "ᚨᚨᛒᚲᛞᚦᛖᛖᚠᚷᚻᛁᛁᛃᚲᛚᛗᚾᛜᛟᛟᛈᚲᚱᛋᛏᚦᚢᚢᚹᚹᛋᛁᛁᛉᛟᛇᛇᚢᚢᛟᚦ";
+        String letters = "aábcdðeéfghiíjklmnŋoópqrstþuúvwxyýzåäæœöøǫþ";
+        String runes = "ᚨᚨᛒᚲᛞᚦᛖᛖᚠᚷᚻᛁᛁᛃᚲᛚᛗᚾᛜᛟᛟᛈᚲᚱᛋᛏᚦᚢᚢᚹᚹᛋᛁᛁᛉᛟᛇᛇᛟᚢᚢᛟᚦ";
 
         Dialect dialect = new ElderFuthark();
         String result = dialect.lettersToRunes(letters);

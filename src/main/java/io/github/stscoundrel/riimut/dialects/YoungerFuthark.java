@@ -52,6 +52,7 @@ public class YoungerFuthark implements Dialect {
             put("å", "ᚢ");
             put("ä", "ᛅ");
             put("æ", "ᛅ");
+            put("œ", "ᚢ");
             put("ö", "ᚢ");
             put("ø", "ᚢ");
             put("ǫ", "ᚢ");
@@ -98,6 +99,7 @@ public class YoungerFuthark implements Dialect {
             put("å", "ᚢ");
             put("ä", "ᛆ");
             put("æ", "ᛆ");
+            put("œ", "ᚢ");
             put("ö", "ᚢ");
             put("ø", "ᚢ");
             put("ǫ", "ᚢ");
@@ -144,6 +146,7 @@ public class YoungerFuthark implements Dialect {
             put("å", "ˎ");
             put("ä", "⸝");
             put("æ", "⸝");
+            put("œ", "ˎ");
             put("ö", "ˎ");
             put("ø", "ˎ");
             put("ǫ", "ˎ");

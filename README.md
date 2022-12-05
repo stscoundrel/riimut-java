@@ -17,7 +17,7 @@ As Maven dependency.
 <dependency>
   <groupId>io.github.stscoundrel</groupId>
   <artifactId>riimut</artifactId>
-  <version>0.3.0</version> <!-- Note! Check latest release number -->
+  <version>0.5.0</version> <!-- Note! Check latest release number -->
 </dependency>
 ```
 
@@ -36,26 +36,30 @@ import io.github.stscoundrel.riimut.dialects.Futhorc;
 // They all implement common "Dialect" interface 
 import io.github.stscoundrel.riimut.dialects.Dialect;
 
+Dialect youngerFuthark = new YoungerFuthark();
+Dialect elderFuthark = new ElderFuthark();
+Dialect medievalFuthork = new MedievalFuthork();
+Dialect futhorc = new Futhorc();
+
 // From Old Groms runestone.
 String content = "auk tani karþi kristna";
-Dialect youngerFuthark = new YoungerFuthark();
-String result = YoungerFuthark.lettersToRunes(content);
-System.out.println(result); // ᛅᚢᚴ:ᛏᛅᚾᛁ:ᚴᛅᚱᚦᛁ:ᚴᚱᛁᛋᛏᚾᛅ
+String result1 = youngerFuthark.lettersToRunes(content);
+System.out.println(result1); // ᛅᚢᚴ:ᛏᛅᚾᛁ:ᚴᛅᚱᚦᛁ:ᚴᚱᛁᛋᛏᚾᛅ
 
 // From 4th century axe in Jutland
 String content = "wagagastiz alu wihgu sikijaz aiþalataz";
-String elderFuthark = ElderFuthark.lettersToRunes(content);
-System.out.println(result); // ᚹᚨᚷᚨᚷᚨᛋᛏᛁᛉ:ᚨᛚᚢ:ᚹᛁᚻᚷᚢ:ᛋᛁᚲᛁᛃᚨᛉ:ᚨᛁᚦᚨᛚᚨᛏᚨᛉ
+String result2 = elderFuthark.lettersToRunes(content);
+System.out.println(result2); // ᚹᚨᚷᚨᚷᚨᛋᛏᛁᛉ:ᚨᛚᚢ:ᚹᛁᚻᚷᚢ:ᛋᛁᚲᛁᛃᚨᛉ:ᚨᛁᚦᚨᛚᚨᛏᚨᛉ
 
 // From Lord's Prayer, in Old Norse.
 String content = "Faðer uor som ast i himlüm, halgað warðe þit nama";
-String medievalFuthork = MedievalFuthork.lettersToRunes(content);
-System.out.println(result); // ᚠᛆᚦᚽᚱ:ᚢᚮᚱ:ᛋᚮᛘ:ᛆᛋᛏ:ᛁ:ᚼᛁᛘᛚᚢᛘ,:ᚼᛆᛚᚵᛆᚦ:ᚠᛆᚱᚦᚽ:ᚦᛁᛏ:ᚿᛆᛘᛆ
+String result3 = medievalFuthork.lettersToRunes(content);
+System.out.println(result3); // ᚠᛆᚦᚽᚱ:ᚢᚮᚱ:ᛋᚮᛘ:ᛆᛋᛏ:ᛁ:ᚼᛁᛘᛚᚢᛘ,:ᚼᛆᛚᚵᛆᚦ:ᚠᛆᚱᚦᚽ:ᚦᛁᛏ:ᚿᛆᛘᛆ
 
 // From 8th century Franks Casket, in late West Saxon.
 String content = "fisc.flodu.ahofonferg | enberig |";
-String futhorc = Futhorc.lettersToRunes(content);
-System.out.println(result); // ᚠᛁᛋᚳ.ᚠᛚᚩᛞᚢ.ᚪᚻᚩᚠᚩᚾᚠᛖᚱᚷ:|:ᛖᚾᛒᛖᚱᛁᚷ:|
+String result4 = futhorc.lettersToRunes(content);
+System.out.println(result4); // ᚠᛁᛋᚳ.ᚠᛚᚩᛞᚢ.ᚪᚻᚩᚠᚩᚾᚠᛖᚱᚷ:|:ᛖᚾᛒᛖᚱᛁᚷ:|
 
 ```
 
